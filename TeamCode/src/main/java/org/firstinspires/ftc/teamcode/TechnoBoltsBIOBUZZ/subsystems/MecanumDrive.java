@@ -16,7 +16,6 @@ public final class MecanumDrive {
     private final DcMotorEx frontRight;
     private final DcMotorEx backLeft;
     private final DcMotorEx backRight;
-
     public MecanumDrive(
             HardwareMap hardwareMap,
             String frontLeftName,
