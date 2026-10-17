@@ -1,30 +1,32 @@
 package org.firstinspires.ftc.teamcode.TechnoBoltsBIOBUZZ;
 
 
+import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.gamepad1;
+
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 
-@TeleOp
-public class MecanumDrivetrain extends OpMode {
+public class MecanumDrivetrain {
 
     DcMotorEx frontLeft = null;
     DcMotorEx frontRight = null;
     DcMotorEx backLeft = null;
     DcMotorEx backRight = null;
 
-    @Override
-    public void init() {
-        frontLeft = hardwareMap.get(DcMotorEx.class, "front-left");
-        frontRight = hardwareMap.get(DcMotorEx.class, "front-right");
-        backLeft = hardwareMap.get(DcMotorEx.class, "back-left");
-        backRight = hardwareMap.get(DcMotorEx.class, "back-right");
+    public void init(HardwareMap hwMap) {
+        frontLeft = hwMap.get(DcMotorEx.class, "front-left");
+        frontRight = hwMap.get(DcMotorEx.class, "front-right");
+        backLeft = hwMap.get(DcMotorEx.class, "back-left");
+        backRight = hwMap.get(DcMotorEx.class, "back-right");
 
         // Left side motors are mounted mirrored, so reverse them.
         // If your robot drives backwards, flip these to the right side instead.
         frontLeft.setDirection(DcMotorEx.Direction.REVERSE);
         backLeft.setDirection(DcMotorEx.Direction.REVERSE);
+
 
         frontLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         backLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -32,13 +34,7 @@ public class MecanumDrivetrain extends OpMode {
         backRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
 
-    @Override
-    public void loop() {
-
-        // Left stick: forward/back (y) and strafe (x). Right stick: rotation.
-        double x = gamepad1.left_stick_x;
-        double y = -gamepad1.left_stick_y;   // stick up is negative, so invert
-        double turn = gamepad1.right_stick_x;
+    public void drive(double x, double y, double turn) {
 
         double theta = Math.atan2(y, x);
         double power = Math.hypot(x, y);
