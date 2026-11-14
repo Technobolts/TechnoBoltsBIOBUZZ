@@ -1,11 +1,10 @@
 package org.firstinspires.ftc.teamcode.TechnoBoltsBIOBUZZ;
 
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.gamepad1;
-
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorEx;
+
+import org.firstinspires.ftc.teamcode.TechnoBoltsBIOBUZZ.subsystems.MecanumDrivetrain;
 
 @TeleOp
 public class RobotTeleOp extends OpMode {

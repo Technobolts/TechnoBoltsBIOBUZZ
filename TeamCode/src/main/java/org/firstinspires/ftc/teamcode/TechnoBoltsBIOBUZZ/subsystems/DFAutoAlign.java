@@ -1,5 +1,5 @@
 
-package org.firstinspires.ftc.teamcode.TechnoBoltsBIOBUZZ;
+package org.firstinspires.ftc.teamcode.TechnoBoltsBIOBUZZ.subsystems;
 
 import com.qualcomm.hardware.gobilda.GoBildaPinpointDriver;
 import com.qualcomm.robotcore.hardware.HardwareMap;

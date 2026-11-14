@@ -1,10 +1,6 @@
-package org.firstinspires.ftc.teamcode.TechnoBoltsBIOBUZZ;
+package org.firstinspires.ftc.teamcode.TechnoBoltsBIOBUZZ.subsystems;
 
 
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.gamepad1;
-
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
