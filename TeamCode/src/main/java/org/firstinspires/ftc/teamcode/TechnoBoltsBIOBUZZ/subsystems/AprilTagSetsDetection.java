@@ -93,19 +93,33 @@ public class AprilTagSetsDetection extends OpMode {
         telemetry.update();
     }
 
+
     private String getGroup(int id) {
-        if (id >= 30 && id <= 33) {
-            return "GROUP 1";
-        } else if (id >= 34 && id <= 37) {
-            return "GROUP 2";
-        } else if (id >= 38 && id <= 41) {
-            return "GROUP 3";
-        } else if (id >= 42 && id <= 45) {
-            return "GROUP 4";
-        } else {
-            return "UNKNOWN GROUP - CHECK ID";
+        // RED ALLIANCE
+        if (id == 30 || id == 31) {
+            return "RED - GROUP 1";
+        } else if (id == 32 || id == 33) {
+            return "RED - GROUP 2";
+        } else if (id == 34 || id == 35) {
+            return "RED - GROUP 3";
+        } else if (id == 36 || id == 37) {
+            return "RED - GROUP 4";
         }
+
+        // BLUE ALLIANCE
+        else if (id == 38 || id == 39) {
+            return "BLUE - GROUP 1";
+        } else if (id == 40 || id == 41) {
+            return "BLUE - GROUP 2";
+        } else if (id == 42 || id == 43) {
+            return "BLUE - GROUP 3";
+        } else if (id == 44 || id == 45) {
+            return "BLUE - GROUP 4";
+        }
+
+        return "UNKNOWN GROUP";
     }
+
 
     @Override
     public void stop() {

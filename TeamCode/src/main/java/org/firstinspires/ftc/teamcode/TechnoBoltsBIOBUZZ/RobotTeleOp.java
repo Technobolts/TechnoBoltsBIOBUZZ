@@ -24,9 +24,9 @@ public class RobotTeleOp extends OpMode {
     @Override
     public void loop() {
         // Left stick: forward/back (y) and strafe (x). Right stick: rotation.
-        double x = gamepad1.left_stick_x;
+        double x = -gamepad1.left_stick_x;
         double y = -gamepad1.left_stick_y;   // stick up is negative, so invert
-        double turn = gamepad1.right_stick_x;
+        double turn = -gamepad1.right_stick_x;
 
        drive.drive(x,y,turn);
 
